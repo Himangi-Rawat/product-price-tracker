@@ -1,0 +1,22 @@
+import { Routes, Route, Link } from 'react-router-dom';
+import Dashboard from './pages/Dashboard.jsx';
+import ProductDetail from './pages/ProductDetail.jsx';
+
+export default function App() {
+  return (
+    <div className="app">
+      <header className="app-header">
+        <Link to="/" className="app-title">
+          INE Price Tracker
+        </Link>
+      </header>
+
+      <main className="app-main">
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/products/:id" element={<ProductDetail />} />
+        </Routes>
+      </main>
+    </div>
+  );
+}
